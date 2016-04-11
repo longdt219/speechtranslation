@@ -14,11 +14,11 @@ This implementation is based on C++ neural network library (CNN) with developmen
     cmake .. -DEIGEN3_INCLUDE_DIR=../eigen
     make -j 10
 
-## Experiment with Phone-Word 
+## Experiment with Phone - Word 
 This is experiment directly from phone sequence to word. Similar with machine translation problem. 
 The data format is 
-    <s> source phone </s> ||| <s> target words </s>. 
-We attached tiny training examples for demo purposes. 
+    `<s> source phone </s> ||| <s> target words </s>` 
+We attached tiny training examples for the demo purposes. 
 #### Train the attentional model directly
 Use the following script 
 ```
@@ -40,10 +40,10 @@ We need to initialise with the trained model and use the test data instead of de
 ```
 The output will be the translation on test, first 200 sentences of train and some output for retrieval task. 
 
-
+## Experiment with Speech - Word 
 #### Extract speech features 
 We use [SPRACHcore] (http://www1.icsi.berkeley.edu/~dpwe/projects/sprach/sprachcore.html) to extract plp features from speech file with the following options.
-    ./feacalc -hpfilter 100 -dither -domain cepstra -deltaorder 2 -plp 12 -sr 16000 -opformat ascii -o OUTPUTFILE INPUTFILE
+    `./feacalc -hpfilter 100 -dither -domain cepstra -deltaorder 2 -plp 12 -sr 16000 -opformat ascii -o OUTPUTFILE INPUTFILE`
 Obviously, the sample rate (-sr) will be different based on your data. 
 
 #### Training the model directly from speech signal 
@@ -64,5 +64,3 @@ Show the translation from the trained model for test data (and some train data).
 ```
 ./build/attentional_model/attentional_plp --ttrain data/text/ --strain data/plp/ --lstm --bidirectional --align 32 --hidden 32 --initialise model.speech.plp --epochs 50 --coverage 0.05 --trainer sgd --layers 4 --giza --pyramid --smoothsm 0.1 --split data.split --translation
 ```
-
-Show
