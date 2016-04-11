@@ -15,5 +15,6 @@ This implementation is based on C++ neural network library (CNN) with developmen
     make -j 10
 
 
-#### Training Models
+#### Extract speech features 
+We use SPRACHcore (http://www1.icsi.berkeley.edu/~dpwe/projects/sprach/sprachcore.html) to extract plp features from speech file with the following options. 
 
