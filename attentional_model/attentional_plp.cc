@@ -997,7 +997,7 @@ int find_real_file_name(const string& file_name, const string& prefix){
 std::map<int,string> read_target_directory(const string& foldername){
 	std::vector<string> files = globVector(foldername + "/*");
 
-	const string prefix = ".en";
+	const string prefix = "";
 	std::map<int,string> result;
 	for (unsigned int i=0; i<files.size(); ++i){
 		// Find the real file name (not the path)
@@ -1039,7 +1039,7 @@ void read_split(const string& filename){
 void read_mfcc_directory(const string& foldername){
 	std::vector<string> files = globVector(foldername + "/*");
 
-	const string prefix = ".mfc";
+	const string prefix = "";
 
 	for (unsigned int i=0; i<files.size(); ++i){
 		// Find the real file name (not the path)

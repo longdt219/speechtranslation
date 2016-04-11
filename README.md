@@ -22,7 +22,6 @@ The data format is
 
 We attached a tiny training data for the demo purposes. 
 #### Train the attentional model
-Use the following script 
 
 ```
 ./build/attentional_model/attentional --train data/train.attentional --devel data/dev.attentional --lstm --bidirectional -a 32 --hidden 32 --parameters model.phone --epochs 50 --coverage 0.05 --trainer sgd --layers 4 --giza --smoothsm 0.1
@@ -41,11 +40,10 @@ We need to initialise with the trained model and use the test data instead of de
 ```
 ./build/attentional_model/attentional --train data/train.attentional --devel data/test.attentional --lstm --bidirectional -a 32 --hidden 32 --initialise model.phone --epochs 50 --coverage 0.05 --trainer sgd --layers 4 --giza --smoothsm 0.1 --translation
 ```
-The output will be the translation on test, first 200 sentences of train and some output for retrieval task. 
+The output will be the translation on test, first 200 trainning sentences and some output for retrieval task. 
 
 #### Use the attentional model as reranker 
 Need to extract the first 100 hypothesis from Moses, assuming in the file `data/rescore.pairs` 
-Run the following script
 
 ```
 ./build/attentional_model/attentional --train data/train.attentional --devel data/test.attentional --lstm --bidirectional -a 32 --hidden 32 --initialise model.phone --epochs 50 --coverage 0.05 --trainer sgd --layers 4 --giza --smoothsm 0.1 --rescore --test data/rescore.pairs
@@ -62,7 +60,7 @@ We use [SPRACHcore] (http://www1.icsi.berkeley.edu/~dpwe/projects/sprach/sprachc
 Obviously, the sample rate (`-sr`) will be different based on your data. 
 
 #### Training the model directly from speech signal 
-For demo, I added some tiny data extracted from TIMIT in `data` folder
+For demo, we added a tiny data extracted from TIMIT in `data` folder
 ```
 ./build/attentional_model/attentional_plp --ttrain data/text/ --strain data/plp/ --lstm --bidirectional --align 32 --hidden 32 --parameters model.speech.plp --epochs 50 --coverage 0.05 --trainer sgd --layers 4 --giza --pyramid --smoothsm 0.1 --split data.split
 ```
@@ -83,5 +81,5 @@ There are several useful debugging/outputting options for example
 - display: to shows the alignment matrix in `tikz` format which can be imported to `(la)tex` 
 ```./build/attentional_model/attentional_plp --ttrain data/text/ --strain data/plp/ --lstm --bidirectional --align 32 --hidden 32 --initialise model.speech.plp --epochs 50 --coverage 0.05 --trainer sgd --layers 4 --giza --pyramid --smoothsm 0.1 --split data.split --display```
 
-- verbose: output intermediate alignment/translation.  
+- verbose: output intermediate alignments/translations.  
 
