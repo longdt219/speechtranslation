@@ -22,8 +22,9 @@ Obviously, the sample rate (-sr) will be different based on your data.
 
 #### Training the model directly from speech signal 
 Run the following 
-    ./build/attentional_plp --ttrain ../../data/TEDTALKS/fr_translation_unk/ --strain ../../data/TEDTALKS/fr_plp39/ --lstm --bidirectional -a 256 --hidden 256 --parameters model.speech.plp --epochs 50 --coverage 0.05 --trainer sgd --layers 4 --giza --pyramid --smoothsm 0.1 --split data.split 2> log.plp39.word.unk.pyramid.256.translation
-
+```shell
+./build/attentional_plp --ttrain ../../data/TEDTALKS/fr_translation_unk/ --strain ../../data/TEDTALKS/fr_plp39/ --lstm --bidirectional -a 256 --hidden 256 --parameters model.speech.plp --epochs 50 --coverage 0.05 --trainer sgd --layers 4 --giza --pyramid --smoothsm 0.1 --split data.split 2> log.plp39.word.unk.pyramid.256.translation
+```
 Where : 
     strain: source folder storing all plp files. One plp file represent one speech sentence. 
     
