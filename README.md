@@ -26,6 +26,9 @@ Run the following
 ./build/attentional_plp --ttrain ../../data/TEDTALKS/fr_translation_unk/ --strain ../../data/TEDTALKS/fr_plp39/ --lstm --bidirectional -a 256 --hidden 256 --parameters model.speech.plp --epochs 50 --coverage 0.05 --trainer sgd --layers 4 --giza --pyramid --smoothsm 0.1 --split data.split 2> log.plp39.word.unk.pyramid.256.translation
 ```
 Where : 
-    strain: source folder storing all plp files. One plp file represent one speech sentence. 
+- strain: source folder storing all plp files. One plp file represent one speech sentence.
+- ttrain: target folder where each file is a translation or transcription of the speech sentence. Note that files in strain and ttrain should have the same name (except for the extension). 
+- parameters: same the parameters to this file 
+- lstm 
     
 
