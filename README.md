@@ -74,5 +74,7 @@ Show the translation from the trained model for test data (and some train data).
 ### Others
 There are several useful debugging/outputting options for example 
 - display: to shows the alignment matrix in `tikz` format which can be imported to `(la)tex` 
+```./build/attentional_model/attentional_plp --ttrain data/text/ --strain data/plp/ --lstm --bidirectional --align 32 --hidden 32 --initialise model.speech.plp --epochs 50 --coverage 0.05 --trainer sgd --layers 4 --giza --pyramid --smoothsm 0.1 --split data.split --display```
+
 - verbose: output intermediate alignment/translation.  
 
