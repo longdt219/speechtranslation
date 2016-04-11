@@ -40,7 +40,7 @@ We need to initialise with the trained model and use the test data instead of de
 ```
 The output will be the translation on test, first 200 sentences of train and some output for retrieval task. 
 
-#### Use the attentinal model for reranker 
+#### Use the attentional model as reranker 
 Need to extract the first 100 hypothesis from Moses, assuming in the file `data/rescore.pairs` 
 Run the following script
 ```
@@ -50,12 +50,12 @@ The model will score each pair and add the score at the end. The final translati
 ## Experiment with Speech - Word 
 #### Extract speech features 
 We use [SPRACHcore] (http://www1.icsi.berkeley.edu/~dpwe/projects/sprach/sprachcore.html) to extract plp features from speech file with the following options.
-    `./feacalc -hpfilter 100 -dither -domain cepstra -deltaorder 2 -plp 12 -sr 16000 -opformat ascii -o OUTPUTFILE INPUTFILE`
+```./feacalc -hpfilter 100 -dither -domain cepstra -deltaorder 2 -plp 12 -sr 16000 -opformat ascii -o OUTPUTFILE INPUTFILE```
+
 Obviously, the sample rate (`-sr`) will be different based on your data. 
 
 #### Training the model directly from speech signal 
 For demo, I added some tiny data extracted from TIMIT in `data` folder
-Run the following 
 ```
 ./build/attentional_model/attentional_plp --ttrain data/text/ --strain data/plp/ --lstm --bidirectional --align 32 --hidden 32 --parameters model.speech.plp --epochs 50 --coverage 0.05 --trainer sgd --layers 4 --giza --pyramid --smoothsm 0.1 --split data.split
 ```
@@ -73,6 +73,6 @@ Show the translation from the trained model for test data (and some train data).
 
 ### Others
 There are several useful debugging/outputting options for example 
--display: to shows the alignment matrix in `tikz` format which can be imported to `(la)tex` 
--verbose: output intermediate alignment/translation.  
+- display: to shows the alignment matrix in `tikz` format which can be imported to `(la)tex` 
+- verbose: output intermediate alignment/translation.  
 
