@@ -17,8 +17,8 @@ This implementation is based on C++ neural network library (CNN) with developmen
 ## Experiment with Phone - Word 
 This is experiment directly from phone sequence to word. Similar with machine translation problem. 
 The data format is 
-    `<s> source phone </s> ||| <s> target words </s>` 
-We attached tiny training examples for the demo purposes. 
+```<s> source phone </s> ||| <s> target words </s>``` 
+We attached a tiny training data for the demo purposes. 
 #### Train the attentional model directly
 Use the following script 
 ```
@@ -40,6 +40,13 @@ We need to initialise with the trained model and use the test data instead of de
 ```
 The output will be the translation on test, first 200 sentences of train and some output for retrieval task. 
 
+#### Use the attentinal model for reranker 
+Need to extract the first 100 hypothesis from Moses, assuming in the file data/rescore.pairs. 
+Run the following script
+```
+./build/attentional_model/attentional --train data/train.attentional --devel data/test.attentional --lstm --bidirectional -a 32 --hidden 32 --initialise model.phone --epochs 50 --coverage 0.05 --trainer sgd --layers 4 --giza --smoothsm 0.1 --rescore --test data/rescore.pairs
+```
+The model will score each pair and add the score at the end. The final translation will be the candidate having **lowest** score. 
 ## Experiment with Speech - Word 
 #### Extract speech features 
 We use [SPRACHcore] (http://www1.icsi.berkeley.edu/~dpwe/projects/sprach/sprachcore.html) to extract plp features from speech file with the following options.
