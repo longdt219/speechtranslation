@@ -7,6 +7,7 @@ This is the implementation of our NAACL paper titled.
 This implementation is based on C++ neural network library (CNN) with development version of Eigen. 
 Note: you also need boost for this. 
 
+    sudo apt-get install boost
     hg clone https://bitbucket.org/eigen/eigen/ 
     git clone https://github.com/longdt219/speechtranslation.git
     cd speechtranslation	
