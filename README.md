@@ -5,6 +5,7 @@ This is the implementation of our NAACL paper titled.
 #### Getting started
 
 This implementation is based on C++ neural network library (CNN) with development version of Eigen. 
+Note: you also need boost for this. 
 
     hg clone https://bitbucket.org/eigen/eigen/ 
     git clone https://github.com/longdt219/speechtranslation.git
