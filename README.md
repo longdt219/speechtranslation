@@ -1,11 +1,25 @@
 # Speech Translation/Alignment
 This is the implementation of our NAACL paper titled. 
-**An Attentional Model for Speech Translation Without Transcription**
+[An Attentional Model for Speech Translation Without Transcription] (http://aclweb.org/anthology/N/N16/N16-1109.pdf)
 
+If you use  this code, please cite the paper 
+
+```@InProceedings{duong-EtAl:2016:N16-1,
+  author    = {Duong, Long  and  Anastasopoulos, Antonios  and  Chiang, David  and  Bird, Steven  and  Cohn, Trevor},
+  title     = {An Attentional Model for Speech Translation Without Transcription},
+  booktitle = {Proceedings of the 2016 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies},
+  month     = {June},
+  year      = {2016},
+  address   = {San Diego, California},
+  publisher = {Association for Computational Linguistics},
+  pages     = {949--959},
+  url       = {http://www.aclweb.org/anthology/N16-1109}
+}
+```
 #### Getting started
 
-This implementation is based on C++ neural network library (CNN) with development version of Eigen. 
-Note: you also need boost for this. 
+This implementation is based on [C++ neural network library] (https://github.com/clab/cnn) with development version of [Eigen] (http://eigen.tuxfamily.org/). 
+Note: you also need boost for this. I made some modifications with CNN and release with the code.  
 
     sudo apt-get install boost
     hg clone https://bitbucket.org/eigen/eigen/ 
