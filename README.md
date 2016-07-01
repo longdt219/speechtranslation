@@ -19,7 +19,7 @@ If you use  this code, please cite the paper
 ```
 #### Getting started
 
-This implementation is based on [C++ neural network library] (https://github.com/clab/cnn) with development version of [Eigen] (http://eigen.tuxfamily.org/). 
+This implementation is based on [C++ neural network library (CNN)] (https://github.com/clab/cnn) with development version of [Eigen] (http://eigen.tuxfamily.org/). 
 Note: you also need boost for this. I made some modifications with CNN and release with the code.  
 
     sudo apt-get install boost
