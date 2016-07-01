@@ -1,10 +1,11 @@
 # Speech Translation/Alignment
-This is the implementation of our NAACL paper titled. 
+This is the implementation of our NAACL paper titled : 
 [An Attentional Model for Speech Translation Without Transcription] (http://aclweb.org/anthology/N/N16/N16-1109.pdf)
 
 If you use  this code, please cite the paper 
 
-```@InProceedings{duong-EtAl:2016:N16-1,
+```
+@InProceedings{duong-EtAl:2016:N16-1,
   author    = {Duong, Long  and  Anastasopoulos, Antonios  and  Chiang, David  and  Bird, Steven  and  Cohn, Trevor},
   title     = {An Attentional Model for Speech Translation Without Transcription},
   booktitle = {Proceedings of the 2016 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies},
