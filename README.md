@@ -44,7 +44,7 @@ We attached a tiny training data for the demo purposes.
 ./build/attentional_model/attentional --train data/train.attentional --devel data/dev.attentional --lstm --bidirectional -a 32 --hidden 32 --parameters model.phone --epochs 50 --coverage 0.05 --trainer sgd --layers 4 --giza --smoothsm 0.1
 ```
 Some options :
-- parameters: periodically save the parameters to this file so that learning can be resume
+- parameters: periodically save the parameters to this file so that learning can be resumed
 - lstm: use LSTM for RNN (other options are: GRU and RNN) where GRU use Gated-Recurrent Unit
 - coverage: use the coverage penalty described in the paper
 - layers n: stack n layers of lstm on the target
